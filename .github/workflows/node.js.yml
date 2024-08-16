@@ -30,6 +30,10 @@ jobs:
       - run: npm run build --if-present
       - run: npm test --if-present
 
+      # Debugging step to check if the build directory exists and has content
+      - name: List build directory contents
+        run: ls -la build
+
       - name: Commit and Push build files
         run: |
           git config --global user.name 'github-actions[bot]'
