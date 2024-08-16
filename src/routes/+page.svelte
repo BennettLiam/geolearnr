@@ -79,7 +79,9 @@
 		>
 	{/each}
 </div>
-<img src={questions[currentQuestion].image} alt="quiz question" />
+{#key questions[currentQuestion].image}
+	<img src={questions[currentQuestion].image} alt="quiz question" />
+{/key}
 <div id="newQuestionContainer">
 	<button onclick={goToNextQuestion}>Next question</button>
 	<button onclick={goToRandomNewQuestion}>Random new question</button>
