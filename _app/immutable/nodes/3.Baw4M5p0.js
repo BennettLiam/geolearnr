@@ -1,0 +1,1 @@
+import{f as n,s as t,a as o,t as p}from"../chunks/disclose-version.CQLxmsrf.js";var s=p("<h1>About</h1> <p>Made by Liam Bennett 2024</p>",1);function m(e){var a=s(),r=n(a);t(t(r,!0)),o(e,a)}export{m as component};
