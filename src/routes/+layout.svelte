@@ -18,6 +18,6 @@
 		margin: 0 auto;
 		background-color: rgb(241, 233, 218);
 		padding: 0 1rem;
-		height: 100vh;
+		height: 100%;
 	}
 </style>
