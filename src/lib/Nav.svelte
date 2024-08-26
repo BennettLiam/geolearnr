@@ -2,9 +2,11 @@
 	import { base } from '$app/paths';
 </script>
 
-<nav class="flex gap-4">
-	<a class="text-4xl" href="{base}/">Quiz</a>
-	<a class="text-4xl" href="{base}/about">About</a>
+<nav class="navbar bg-base-200">
+	<div class="mx-auto">
+		<a class="btn btn-ghost text-xl" href="{base}/">Quiz</a>
+		<a class="btn btn-ghost text-xl" href="{base}/about">About</a>
+	</div>
 </nav>
 
 <style>
