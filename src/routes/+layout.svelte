@@ -1,8 +1,9 @@
 <script>
+	import '../app.css';
 	import Nav from '$lib/Nav.svelte';
 </script>
 
-<div>
+<div class="my-0 mx-auto py-0 px-4 h-full">
 	<Nav />
 	<slot></slot>
 </div>
@@ -15,9 +16,6 @@
 	}
 	div {
 		max-width: min(1000px, 100vw);
-		margin: 0 auto;
 		background-color: rgb(241, 233, 218);
-		padding: 0 1rem;
-		height: 100%;
 	}
 </style>

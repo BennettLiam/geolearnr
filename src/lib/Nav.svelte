@@ -2,19 +2,10 @@
 	import { base } from '$app/paths';
 </script>
 
-<nav>
-	<a href="{base}/">Quiz</a>
-	<a href="{base}/about">About</a>
+<nav class="flex gap-4">
+	<a class="text-4xl" href="{base}/">Quiz</a>
+	<a class="text-4xl" href="{base}/about">About</a>
 </nav>
 
 <style>
-	a {
-		font-size: 2rem;
-		color: black;
-	}
-
-	nav {
-		display: flex;
-		gap: 1rem;
-	}
 </style>

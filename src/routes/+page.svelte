@@ -64,17 +64,21 @@
 	}
 </script>
 
-<h1>GeoLearnr</h1>
-<h3>
+<h1 class="text-center font-bold text-3xl">GeoLearnr</h1>
+<h3 class="text-center text-xl">
 	{questions[currentQuestion].question}
-	(<a href={questions[currentQuestion].mapLink} target="_blank">Link</a>)
+	<a class="text-blue-600" href={questions[currentQuestion].mapLink} target="_blank">(Link)</a>
 </h3>
 
 <div id="answerButtonContainer">
 	{#each questions[currentQuestion].possibleAnswers as possibleAnswer, i}
+		{@const correct = answerSelected !== -1 && possibleAnswer === questions[currentQuestion].answer}
+		{@const wrong = answerSelected === i}
 		<button
-			class:correct={answerSelected !== -1 && possibleAnswer === questions[currentQuestion].answer}
-			class:wrong={answerSelected === i}
+			class="active:bg-gray-400"
+			class:bg-white={!wrong && !correct}
+			class:bg-green-400={correct}
+			class:bg-red-400={wrong}
 			onclick={() => (answerSelected = i)}>{possibleAnswer}</button
 		>
 	{/each}
@@ -83,8 +87,12 @@
 	<img src={questions[currentQuestion].image} alt="quiz question" />
 {/key}
 <div id="newQuestionContainer">
-	<button onclick={goToNextQuestion}>Next question</button>
-	<button onclick={goToRandomNewQuestion}>Random new question</button>
+	<button class="bg-white hover:bg-gray-200 active:bg-gray-400" onclick={goToNextQuestion}
+		>Next question</button
+	>
+	<button class="bg-white hover:bg-gray-200 active:bg-gray-400" onclick={goToRandomNewQuestion}
+		>Random new question</button
+	>
 </div>
 
 <style>
@@ -94,11 +102,6 @@
 		margin: 0 auto;
 		border-radius: 1rem;
 		max-width: 100%;
-	}
-
-	h1,
-	h3 {
-		text-align: center;
 	}
 
 	#answerButtonContainer,
@@ -115,13 +118,5 @@
 		font-size: 1.25rem;
 		border: 1px solid rgb(82, 82, 82);
 		border-radius: 2rem;
-	}
-
-	.wrong {
-		background-color: red;
-	}
-
-	.correct {
-		background-color: green;
 	}
 </style>
